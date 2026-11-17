@@ -115,6 +115,9 @@ class InventoryProductHelperTest extends TestCase
         $this->invokeMethod($this->inventoryProductHelper, 'addStockFilter', [$products, 1]);
     }
 
+    /**
+     * @dataProvider showOutOfStockProvider
+     */
     #[DataProvider('showOutOfStockProvider')]
     public function testPassesInverseOfShowOutOfStockAsFilterFlag(bool $showOutOfStock, bool $expectedIsFilterInStock): void
     {
